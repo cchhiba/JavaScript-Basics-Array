@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Oject Intro with table</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		body {
+			margin: 5%;
+		}
+
+		.a-sentence {
+			margin: 75px 0px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>Movie</th>
+				<th>Age</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- Data Goes Here -->
+			<tr>
+				<td id="firstNameActor">Click Me</td>
+				<td id="lastNameActor">Doe</td>
+				<td id="movieActor">Gump Forrest</td>
+				<td id="ageActor">40</td>
+			</tr>
+			<tr>
+				<td id="firstNameActress">John</td>
+				<td id="lastNameActress">Doe</td>
+				<td id="movieActress">Gump Forrest</td>
+				<td id="ageActress">40</td>
+			</tr>
+			<tr>
+				<td id="firstNameDirector">John</td>
+				<td id="lastNameDirector">Doe</td>
+				<td id="movieDirector">Gump Forrest</td>
+				<td id="ageDirector">40</td>
+			</tr>
+		</tbody>
+	</table>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+	<script>
+		// you have a varible and inside the varible, its value is an object
+		// Properties and values
+		var cChhiba = {
+			firstName: 'Charissa',
+			lastName: 'Chhiba',
+			holidays: ['beach', 'city', 'mountains'],
+			likesRain: false,
+			likesSun: true,
+			age: 54
+		};
+		console.log(cChhiba);
+		console.log(cChhiba.holidays);
+
+		var person1 = {
+			firstName: 'Carey',
+			lastName: 'Mulligan',
+			movies: ['Promising Young Women', 'Suffragettes', 'An Education'],
+			age: 35
+		};
+
+
+		var person2 = {
+			firstName: 'Frances',
+			lastName: 'McDormand',
+			movies: ['Fargo', 'Three Billboards Outside of Missiour', 'Almost Famous'],
+			age: 66
+		};
+
+		var person3 = {
+			firstName: 'Julia',
+			lastName: 'Roberts',
+			movies: ['Pretty Women', 'Oceans 11', 'Erin Brockovich'],
+			age: 45
+		};
+
+		function updateTable() {
+
+
+			// 2 ways of calling the Ids from the DOM in javaScript
+			var getFirstNameActor = document.getElementById('firstNameActor');
+			var getFirstNameActorAgain = document.querySelector('#firstNameActor');
+			var getLastNameActor = document.querySelector('#lastNameActor');
+			var getMovieActor = document.querySelector('#movieActor');
+			var getAgeActor = document.querySelector('#ageActor');
+			console.log(getFirstNameActor);
+			console.dir(getFirstNameActorAgain.textContent);
+
+			// textContent allows you to change the text of the Id getFirstNameActor assign a new value.
+			// value.textContent = property
+
+			// person1 text changes
+			getFirstNameActor.textContent = person1.firstName;
+			getLastNameActor.textContent = person1.lastName;
+			getMovieActor.textContent = person1.movies[1];
+			getAgeActor.textContent = person1.age;
+
+			// person2 selecting the ids
+			var getFirstNameActress = document.querySelector('#firstNameActress');
+			var getLastNameActress = document.querySelector('#lastNameActress');
+			var getMovieActress = document.querySelector('#movieActress');
+			var getAgeActress = document.querySelector('#ageActress');
+
+			// person2 text changes
+			getFirstNameActress.textContent = person2.firstName;
+			getLastNameActress.textContent = person2.lastName;
+			getMovieActress.textContent = person2.movies[1];
+			getAgeActress.textContent = person2.age;
+
+			// person3 selecting the ids
+			var getFirstNameDirector = document.querySelector('#firstNameDirector');
+			var getLastNameDirector = document.querySelector('#lastNameDirector');
+			var getMovieDirector = document.querySelector('#movieDirector');
+			var getAgeDirector = document.querySelector('#ageDirector');
+
+			// person3 text changes
+			getFirstNameDirector.textContent = person3.firstName;
+			getLastNameDirector.textContent = person3.lastName;
+			getMovieDirector.textContent = person3.movies[1];
+			getAgeDirector.textContent = person3.age;
+
+		};
+		// function ENDS
+
+		// Call or fire the function
+		// updateTable();
+
+		// A jQuery click function, we can mix this with vanilla .js
+		$('#firstNameActor').click(function() {
+			console.log('working');
+			updateTable();
+
+
+		});
+	</script>
+</body>
+
+</html>
