@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Arrays</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		body {
+			margin: 5%;
+		}
+
+		.a-sentence {
+			margin: 75px 0px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1 class="a-sentence">
+		<span id="one">hello</span>
+		<span id="two">my</span>
+		<span id="three">name</span>
+		<span id="four">is</span>
+		<span id="five">molly</span>
+		<span id="six">and</span>
+		<span id="seven">i</span>
+		<span id="eight">am</span>
+		<span id="nine">saying</span>
+		<span id="ten">a</span>
+		<span id="eleven">big</span>
+		<span id="twelve">HELLO.</span>
+	</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>Movie</th>
+				<th>Age</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- Data Goes Here -->
+			<tr>
+				<td>John</td>
+				<td>Doe</td>
+				<td>Gump Forrest</td>
+				<td>40</td>
+			</tr>
+			<tr>
+				<td>John</td>
+				<td>Doe</td>
+				<td>Gump Forrest</td>
+				<td>40</td>
+			</tr>
+			<tr>
+				<td>John</td>
+				<td>Doe</td>
+				<td>Gump Forrest</td>
+				<td>40</td>
+			</tr>
+			<tr>
+				<td>John</td>
+				<td>Doe</td>
+				<td>Gump Forrest</td>
+				<td>40</td>
+			</tr>
+		</tbody>
+	</table>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+	<script>
+		// 3 data types
+		var string = 'this is a string';
+		var number = 20;
+		var boolean = true;
+
+		// concatenating
+		// var a = 'Today is ';
+		// var b = 'Wednesday ';
+		// var c = 'and the weather ';
+		// var d = 'is ';
+		// var e = 'very ';
+		// var f = 'cold!';
+
+		// var a = 20;
+		// var b = 30;
+		//
+		// console.log(a + b);
+		//
+		// var theArray = ['banana', 5, 'army green', true];
+		//
+		// console.log(theArray[0]);
+
+		var theArray = [450, 'to', 'plastic', 'break', 'in', 'bottles', 'the', 'down', 'can', 'years', 'take', 'ocean'];
+		// pushed or add the value to the array
+		theArray.push('pushing into the array');
+		// logged the array
+		console.log(theArray);
+		// remove last value from the array
+		theArray.pop();
+		// logged the array
+		console.log(theArray);
+
+		// arranging the array for the sentence to make sense
+		console.log(theArray[6] + ' ' + theArray[11] + ' ' + theArray[8] + ' ' + theArray[10] + ' ' + theArray[0] + ' ' + theArray[9] + ' ' + theArray[1] + ' ' + theArray[3] + ' ' + theArray[7] + ' ' + theArray[2] + ' ' + theArray[5]);
+
+		// 1. step one: create function
+		function updateTheHtml() {
+			console.log('I am a function');
+		};
+		// 2. step two: envoke the function
+		updateTheHtml();
+
+
+		var yourArray = ['plastic', 'bottles', 'can', 'take', 450, 'years', 'to', 'break', 'down', 'in', 'the', 'ocean'];
+
+		// Get elements and change the text
+		var yourArrayA = document.getElementById('one');
+		yourArrayA.textContent = yourArray[11];
+
+		var yourArrayB = document.getElementById('two');
+		yourArrayB.textContent = yourArray[10];
+
+		var yourArrayC = document.getElementById('three');
+		yourArrayC.textContent = yourArray[9];
+
+		var yourArrayD = document.getElementById('four');
+		yourArrayD.textContent = yourArray[8];
+
+		var yourArrayE = document.getElementById('five');
+		yourArrayE.textContent = yourArray[7];
+
+		var yourArrayF = document.getElementById('six');
+		yourArrayF.textContent = yourArray[6];
+
+		var yourArrayG = document.getElementById('seven');
+		yourArrayG.textContent = yourArray[5];
+
+		var yourArrayH = document.getElementById('eight');
+		yourArrayH.textContent = yourArray[4];
+
+		var yourArrayI = document.getElementById('nine');
+		yourArrayI.textContent = yourArray[3];
+
+		var yourArrayJ = document.getElementById('ten');
+		yourArrayJ.textContent = yourArray[2];
+
+		var yourArrayK = document.getElementById('eleven');
+		yourArrayK.textContent = yourArray[1];
+
+		var yourArrayL = document.getElementById('twelve');
+		yourArrayL.textContent = yourArray[0];
+
+
+		console.log(yourArrayA);
+
+	</script>
+</body>
+
+</html>
