@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>object-array</title>
+  <style>
+    .hotel-info {
+      color: powderBlue;
+      background-color: dodgerBlue;
+    }
+    p {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hotel-info">
+    <h1 id="name">Name</h1>
+    <h2 id="location">Location</h2>
+    <h2 id="area">Area</h2>
+    <h4 id="airport">Closest Airport</h4>
+    <h4 id="beauty">Natural Beauty?</h4>
+    <h4 id="nearby">Whats Near By?</h4>
+    <ul id="a">Nearby one</ul>
+    <ul id="b">Nearby one</ul>
+    <h4 id="facilities">Facilities</h4>
+    <ul id="outdoorFacilities">Outdoor Facilities</ul>
+    <p>List one</p>
+    <ul>Activities</ul>
+  </div>
+
+  <div class="person">
+    <h1></h1>
+  </div>
+  <!-- <div id="parent">
+    <p id="child1">List one</p>
+    <p id="child2">More text.</p>
+  </div> -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script>
+
+
+      // Object starts
+      var hotel = {
+        name: 'Peppers Soul Surfers Paradise',
+        location: 'Australia',
+        area: 'Beachfront',
+        roomType: 'Apartment',
+        closestAirport: 'Gold Coast Airport',
+        naturalBeautyNearby: true,
+        whatsNearby: [
+          ['Ripleys Believe It or Not', ' ', '0.2'],
+          ['Infinity Maze', ' ', '0.4']
+        ],
+        facilities: {
+          outdoorFacilities: ['Sun Deck', 'BBQ', 'Balcony', 'Terrace', 'Garden'],
+          activities: ['Live Music', 'Movie Night', 'Beach']
+        },
+        // method STARTS
+        thisMethod: function (){
+          var getPara = document.querySelector('p');
+          getPara.textContent = hotel.outdoorFacilities;
+          var header = document.createElement('h1');
+          header.textContent = hotel.roomType;
+          document.body.appendChild(header);
+
+        } // Method ENDS
+      };  // Object ENDS
+
+      window.onclick = function () {
+        hotel.thisMethod();
+      };
+
+    // Start of function
+      function updateDOM () {
+        var one = document.querySelector('#name');
+        one.textContent = hotel.name;
+        var two = document.querySelector('#location');
+        two.textContent = hotel.location;
+        var three = document.querySelector('#area');
+        three.textContent = hotel.area;
+        var four = document.querySelector('#airport');
+        four.textContent = hotel.closestAirport;
+        var five = document.querySelector('#beauty');
+        five.textContent = hotel.naturalBeautyNearby;
+        var six = document.querySelector('#a');
+        six.textContent = hotel.whatsNearby[0][0];
+        // console.log(hotel.whatsNearby[0][0]);
+        var seven = document.querySelector('#b');
+        seven.textContent = hotel.whatsNearby[1];
+        var eight = document.querySelector('#outdoorFacilities');
+        eight.textContent = hotel.outdoorFacilities;
+      };
+    // end of function
+
+    updateDOM();
+
+
+
+
+    // var person = {
+    //   firstName: "John",
+    //   lastName: "Doe",
+    //   id: 5566,
+    //   somethingLikeThis: function() {
+    //     // Place all DOM manipulation code below here...
+    //     var getPara = document.createElement('p');
+    //     getPara.textContent = person.firstName;
+    //     var para = document.createElement ('p');
+    //     para.textContent = person.firstName;
+    //     document.body.appendChild(para);
+
+        // var newPara = document.createElement("p");
+        // var textNode = document.createTextNode("Unexpected text!");
+        // newPara.appendChild(textNode);
+        // var newElement = document.getElementById("parent");
+        // newElement.appendChild(newPara);
+    //   }
+    // };
+    // end of function
+
+    // window.onclick = function () {
+    //   person.somethingLikeThis();
+    // };
+
+  </script>
+</body>
+
+</html>

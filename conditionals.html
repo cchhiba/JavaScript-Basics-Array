@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>conditionals and if statements</title>
+
+</head>
+
+<body>
+
+  <p>True</p>
+  <button>Click</button>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script>
+    // Some logic Vars
+    var isTrue = true;
+    var isFalse = false;
+    var flaseText = 'false';
+    var trueText = 'true';
+    var skyIs = 'blue and grey';
+    var aNum = 5;
+    var bNum = 5;
+    var getButton = document.querySelector('button');
+    //     console.log(getButton);
+    //
+    // getButton.onclick = function (){
+    //   console.log('clicked....');
+    //   // Conditional statement
+    // if (isFalse) {
+    // makeTrue();
+    // } else {
+    // makeFalse();
+    // }
+    //
+    // };
+    //
+    //
+    //
+    //
+    //     // START of function makeFalse
+    //     function makeFalse () {
+    //       var para = document.querySelector('p');
+    //       para.textContent = 'false';
+    //       console.log(para);
+    //
+    //     }; // END of function makeFalse
+    //
+    //     // makeFalse(); // calling the function trueUpdateTime
+    //
+    //
+    //     // START of function makeTrue
+    //     function makeTrue () {
+    //       var para = document.querySelector('p');
+    //       para.textContent = 'True';
+    //       console.log(para);
+    //
+    //     }; // END of function makeTrue
+
+
+
+
+    // if above is true, the alert will run
+    // if (isFalse === false) {
+    //   alert('true sucess');
+    // } else {
+    //   alert('this is false')
+    // }
+
+// prompt adds the string to the variable person
+    var q1 = prompt("what is my fav colour?");
+    // console.log(person);
+
+// This is making your varible q1 === whatever you want it to equal
+// when usig prompts you must define the varible with a string only, cant use a number
+    if (q1 === 'Indigo') {
+      console.log('wow, you guessed my fav colour');
+      var q2 = prompt("What is my fav fabric");
+    } else {
+      console.log('Incorrect');
+      var q2 = prompt("That was wrong. Try this: What is my fav fabric");
+    }
+
+    if (q2 === 'Denim') {
+      console.log('wow, you guessed my fav Fabric');
+      var q3 = prompt('What is my fav thread weight');
+    } else {
+      console.log('Incorrect');
+      var q3 = prompt('That was wrong. Try this: What is my thread weight');
+    }
+
+    if (q3 === '80s') {
+      console.log('wow, you guessed my fav thread weight');
+      var q4 = prompt('What is my fav button quality');
+    } else {
+      console.log('Incorrect');
+      var q4 = prompt('That was wrong. Try this: What is my fav button quality');
+    }
+
+    if (q4 === 'Horn') {
+      console.log('wow, you guessed my fav button quality');
+      var q5 = prompt('What is my fav wash type');
+    } else {
+      console.log('Incorrect');
+      var q5 = prompt('That was wrong. Try this: What is my fav wash type');
+    }
+
+    if (q5 === 'Industrial') {
+      console.log('wow, you guessed my fav wash type');
+    } else {
+      console.log('You got the last question Incorrect');
+    }
+
+
+
+  </script>
+</body>
+
+</html>
