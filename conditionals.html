@@ -5,14 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>conditionals and if statements</title>
-
+  <title>conditionals and if statements - quiz</title>
 </head>
 
 <body>
+  <h1> &#x1F47d; &#x1F4Af; Have a go at my quiz &#x1F60a; &#x1F4A3; &#x1F4Ab;</h1>
+  <h2>Go down the worm &#x1F573;</h2>
+  <button id="clickBtn">Click to play the Quiz!</button>
+  <br><br>
+  <h4> &#x1F4Ab; Last chance draw, enter your lucky number here (from 1 to 10) to see if you won!</h4>
+  <input type="text" name="" value="" id="inputNum">
+  <button id="submitBtn" type="button" name="button">Submit</button>
 
-  <p>True</p>
-  <button>Click</button>
+
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
   <script>
@@ -24,98 +29,177 @@
     var skyIs = 'blue and grey';
     var aNum = 5;
     var bNum = 5;
-    var getButton = document.querySelector('button');
-    //     console.log(getButton);
-    //
-    // getButton.onclick = function (){
-    //   console.log('clicked....');
-    //   // Conditional statement
-    // if (isFalse) {
-    // makeTrue();
-    // } else {
-    // makeFalse();
-    // }
-    //
-    // };
-    //
-    //
-    //
-    //
-    //     // START of function makeFalse
-    //     function makeFalse () {
-    //       var para = document.querySelector('p');
-    //       para.textContent = 'false';
-    //       console.log(para);
-    //
-    //     }; // END of function makeFalse
-    //
-    //     // makeFalse(); // calling the function trueUpdateTime
-    //
-    //
-    //     // START of function makeTrue
-    //     function makeTrue () {
-    //       var para = document.querySelector('p');
-    //       para.textContent = 'True';
-    //       console.log(para);
-    //
-    //     }; // END of function makeTrue
+    var score = 0;
+    var getButton = document.querySelector('#clickBtn');
+    console.log(getButton);
+    // START of function
+    getButton.onclick = function() {
+      console.log('clicked Quiz....');
+
+      var getSubmitButton = document.querySelector('#submitBtn');
+      console.log(getSubmitButton);
+
+      getSubmitButton.onclick = function() {
+        console.log('clicked submit....');
+        console.dir(typeof parseInt(document.getElementById('inputNum').value));
+        var getInput = true;
+        var luckyNum = 4;
+        parseInt(document.getElementById('inputNum').value)
+        // var luckyNum = 4;
+
+
+        // START of switch statement
+        switch (luckyNum) {
+          case 4:
+            alert("Yay this actually works!")
+            break;
+          case 3:
+            alert("Welcome")
+            break;
+          default:
+            alert('wrong answer');
+        }   // END of switch statement
+      }; // END of function
 
 
 
 
-    // if above is true, the alert will run
-    // if (isFalse === false) {
-    //   alert('true sucess');
-    // } else {
-    //   alert('this is false')
-    // }
+      // Conditional statement
+      //   if (isFalse) {
+      //     makeTrue();
+      //   } else {
+      //     makeFalse();
+      //   }
+      // };
+      //
+      //
+      //
+      //
+      //     // START of function makeFalse
+      //     function makeFalse () {
+      //       var para = document.querySelector('p');
+      //       para.textContent = 'false';
+      //       console.log(para);
+      //
+      //     }; // END of function makeFalse
+      //
+      //     // makeFalse(); // calling the function trueUpdateTime
+      //
+      //
+      //     // START of function makeTrue
+      //     function makeTrue () {
+      //       var para = document.querySelector('p');
+      //       para.textContent = 'True';
+      //       console.log(para);
+      //
+      //     }; // END of function makeTrue
+      // if above is true, the alert will run
+      // if (isFalse === false) {
+      //   alert('true sucess');
+      // } else {
+      //   alert('this is false')
+      // }
+      // prompt adds the string to the variable person
 
-// prompt adds the string to the variable person
-    var q1 = prompt("what is my fav colour?");
-    // console.log(person);
+      // Question 1 ----------------------------------------------------------
+      var q1 = prompt("what is my fav colour?");
+      // console.log(person);
+      // This is making your varible q1 === whatever you want it to equal
+      // when usig prompts you must define the varible with a string only, cant use a number
+      if (q1 === 'Indigo') {
+        score++;
+        console.log(score);
+        console.log('wow, you guessed my fav colour');
+        var q2 = prompt("What one of my fav fabric out of Denim, Organic cotton or Bamboo?");
+      } else {
+        console.log('Incorrect');
+        var q2 = prompt("That was wrong. Try this: What one of my fav fabric out of Denim, Organic cotton or Bamboo?");
+      }
+      // END
 
-// This is making your varible q1 === whatever you want it to equal
-// when usig prompts you must define the varible with a string only, cant use a number
-    if (q1 === 'Indigo') {
-      console.log('wow, you guessed my fav colour');
-      var q2 = prompt("What is my fav fabric");
-    } else {
-      console.log('Incorrect');
-      var q2 = prompt("That was wrong. Try this: What is my fav fabric");
-    }
+      // Question 2 ----------------------------------------------------------
+      // The parseInt() function parses a string and returns an integer.
+      if (q2 === 'Denim') {
+        score++;
+        console.log(score);
+        console.log('wow, you guessed my fav Fabric');
+        var q3 = parseInt(prompt('What is my fav thread weight'));
+      } else if (q2 === 'Organic cotton') {
+        console.log('Incorrect fabric type');
+        var q3 = parseInt(prompt('That was wrong. Try this: What is my thread weight?'));
+      } else if (q2 === 'Bamboo') {
+        console.log('Incorrect fabric type');
+        var q3 = parseInt(prompt('That was wrong. Try this: What is my thread weight?'));
+      } else {
+        console.log('Incorrect');
+        var q3 = parseInt(prompt('That was wrong. Try this: What is my thread weight?'));
+      }
+      // END
 
-    if (q2 === 'Denim') {
-      console.log('wow, you guessed my fav Fabric');
-      var q3 = prompt('What is my fav thread weight');
-    } else {
-      console.log('Incorrect');
-      var q3 = prompt('That was wrong. Try this: What is my thread weight');
-    }
+      // Question 3 ----------------------------------------------------------
+      if (q3 === 80) {
+        score++;
+        console.log(score);
+        console.log('wow, you guessed my fav thread weight! Bang on!');
+        var q4 = prompt('GREAT! How many buttons?');
+      } else if (q3 > 60 && q3 < 120) {
+        console.log('Ok, anything greater than 60 and less than 120 is good');
+        var q4 = prompt('OK, How many buttons?');
+      } else {
+        console.log('Incorrect, anything over 120 is too high! Lets move on');
+        var q4 = prompt('How many buttons?');
+      }
 
-    if (q3 === '80s') {
-      console.log('wow, you guessed my fav thread weight');
-      var q4 = prompt('What is my fav button quality');
-    } else {
-      console.log('Incorrect');
-      var q4 = prompt('That was wrong. Try this: What is my fav button quality');
-    }
+      // Question 4 ----------------------------------------------------------
+      if (q3 === 80 && q4 < 10) {
+        score++;
+        console.log(score);
+        console.log('wow, you guessed how many buttons');
+        var q5 = prompt('Great Job! What is my fav wash type LIW 10mins or HIW 20mins?');
+      } else if (q3 === 80 && q4 > 10) {
+        console.log('Incorrect amount of buttons but youre doing great so far!');
+        var q5 = prompt('That was wrong. Try this: What is my fav wash type');
+      } else if (q4 > 10) {
+        console.log('Incorrect amount of buttons');
+        var q5 = prompt('That was wrong. Try this, What is my fav wash type LIW 10mins or HIW 20mins?');
+      } else {
+        console.log('Incorrect buttons amount');
+        var q5 = prompt('That was wrong. Try this, What is my fav wash type LIW 10mins or HIW 20mins?');
+      }
+      // END
 
-    if (q4 === 'Horn') {
-      console.log('wow, you guessed my fav button quality');
-      var q5 = prompt('What is my fav wash type');
-    } else {
-      console.log('Incorrect');
-      var q5 = prompt('That was wrong. Try this: What is my fav wash type');
-    }
+      // Question 5 ----------------------------------------------------------
+      // trying a switch statements
+      // var q5 = 'LIW 10mins';
+      switch (q5 === 'LIW 10mins') {
+        case 'HIW 20mins':
+          console.log('Incorrect wash type but good try');
+          break;
+        case 'LIW 10mins':
+        score++;
+        console.log(score);
+          console.log('Well done! That was bang on!');
+          break;
+        default:
+          console.log('Incorrect you need to try again the quiz again!');
+      }
+      // END
 
-    if (q5 === 'Industrial') {
-      console.log('wow, you guessed my fav wash type');
-    } else {
-      console.log('You got the last question Incorrect');
-    }
 
-
-
+      // if (q5 != 'industrial') {
+      //   console.log('Correct, any other wash it is');
+      // } else {
+      //   console.log('You got the last question Incorrect');
+      // }
+      // if (q3 === '80s') {
+      //   console.log('wow, you guessed my fav thread weight');
+      //   var q4 = prompt('What is my fav button quality');
+      // } else if {
+      //   console.log('Incorrect');
+      //   var q4 = prompt('That was wrong. Try this: What is my fav button quality');
+      // }
+    };
+    // END of function
   </script>
 </body>
 

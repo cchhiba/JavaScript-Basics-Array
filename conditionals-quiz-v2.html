@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>conditionals and if statements - quiz</title>
+</head>
+
+<body>
+
+  <script>
+  // Quiz Code
+// The parseInt() function parses a string and returns an integer
+  var q1 = prompt("What is the capital of Portugal");
+  // var stringThing = 'hello';
+  // var numberString = '120';
+  //
+  // var makeItANumber = parseInt(numberString);
+  //
+  // console.log( numberString);
+  // console.log(makeItANUmber);
+
+  // Question 1 ----------------------------------------------------------
+  if (q1 === 'Lisbon') {
+    console.log('correct');
+    var q2 = prompt('Correct! How old is the worlds oldest person?');
+  } else {
+    console.log('incorrect');
+    var q2 = prompt('Incorrect! How old is the worlds oldest person?');
+  }
+  // ENDS
+
+  // Question 2 ----------------------------------------------------------
+  if (q2 === '122') {
+    console.log('correct');
+    var q3 = prompt('Correct! What is the best selling flavour of ice cream in the US, Vanilla - Chocolate - Cookies & Cream?');
+  } else {
+    console.log('Incorrect');
+    var q3 = prompt('Correct! What is the best selling flavour of ice cream in the US, Vanilla - Chocolate - Cookies & Cream?');
+  }
+  // ENDS
+
+  // Question 3 ----------------------------------------------------------
+  if (q3 === 'Vanilla') {
+    console.log('correct');
+    var q4 = parseInt(prompt('Correct! How many floors does the Empire State Building have ?'));
+  } else if (q3 === 'Chocolate'){
+    console.log('Incorrect');
+    var q4 = parseInt(prompt('Incorrect! How many floors does the Empire State Building have ?'));
+  } else if (q3 === 'Cookies and cream'){
+    console.log('Incorrect');
+    var q4 = parseInt(prompt('Incorrect! How many floors does the Empire State Building have ?'));
+  } else {
+    console.log('Incorrect');
+    var q4 = parseInt(prompt('Incorrect Ice Cream! How many floors does the Empire State Building have ?'));
+  }
+  // ENDS
+
+  // Question 4 - Using Numbers----------------------------------------------------------
+  if (q4  === 102) {
+    console.log('correct');
+    var q4 = prompt('Correct that is the right amount of floors! Next?');
+  } else if ( q4 < 50) {
+      console.log('Incorrect');
+      var q5 = prompt('Incorrect a bit toooo low, Who is the better singer: James Brown, Alicia Keys or Elton John?');
+ } else if (q4 > 102) {
+      console.log('Incorrect');
+      var q5 = prompt('Oops a bit high, Who is the better singer: James Brown, Alicia Keys or Elton John?');
+ } else {
+      console.log('Incorrect');
+      var q5 = prompt('Incorrect, Who is the better singer: James Brown, Alicia Keys or Elton John?');
+}
+  // ENDS
+
+
+  </script>
+</body>
+
+</html>
