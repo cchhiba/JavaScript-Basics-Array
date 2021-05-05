@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>task</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		* {
+			font-family: 'Source Sans Pro', sans-serif;
+			font-weight: 300;
+		}
+
+		body {
+			background-color: #333;
+			font-size: 30px;
+		}
+
+		h4 {
+			font-size: 54px;
+		}
+
+		div {
+			border: 1px solid #000;
+			width: 25%;
+			margin: 0 auto;
+			margin-top: 8em;
+			padding: 1.5em;
+			background-color: #efefef;
+		}
+	</style>
+</head>
+
+<body>
+DOM code -----------------------------------------------------------------------
+	<div>
+		<h4 id="output">
+			<span id="hours"></span>
+			<span>:</span>
+			<span id="minutes"></span>
+			<span>:</span>
+			<span id="seconds"></span>
+		</h4>
+		<p id="statement"></p>
+	</div>
+
+START DOM code ------------------------------------------------------------------
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+	<script>
+		//*** Task 1 - Make 3 more true 'logical conditional if' statements that are based on the current time
+
+				// ---------------------------------------------------------------
+		$(document).ready(function() {
+
+			window.onclick = function() {
+
+				// Access Elements In The HTML -------------------------------------
+				// grabbing the IDs from the html
+				var getHoursHtml = document.getElementById('hours');
+				var getMinutesHtml = document.getElementById('minutes');
+				var getSecondsHtml = document.getElementById('seconds');
+				var statement = document.getElementById('statement');
+
+				// ---------------------------------------------------------------
+
+				// Use the date constructor, to create a date and time object
+				var timeStamp = new Date();
+				console.log(timeStamp);
+
+				// Assign times to variables --------------------------------
+				// creating a new varible that grabbing an exsisting variable called timeStamp AND we create a new function at the end of the line
+				// new variable = variable above . new function -------------------
+				var hours = timeStamp.getHours();
+				var minutes = timeStamp.getMinutes();
+				var seconds = timeStamp.getSeconds();
+
+				// Update the DOM or HTML with the time values from the variables above
+				// using the new varible / id dom we created to change the text and that equals the variable
+				// these are you key variable to use ---------------
+				getHoursHtml.textContent = hours;
+				getMinutesHtml.textContent = minutes;
+				getSecondsHtml.textContent = seconds;
+
+				// A conditional that alerts when the time is less the 20 seconds
+				//
+				// if (seconds < 20){
+				// 	alert('Less than 20');
+				// } else if (hours === 9 && minutes < 49){
+				// 	alert('We are close to break time :)');
+				// } else {
+				// 	alert('tbc');
+				// }
+
+				// if (hours >= 11 || minutes < 10) {
+				// 	alert('Your orGIerator is working');
+				// } else if (hours > 5 && minutes < 50) {
+				// 	alert('Your and operator is working');
+				// } else {
+				// 	alert('hi');
+				// }
+
+				// Set time second with an setInterval
+				setInterval(function() {
+					var timeStamp = new Date();
+					var timerSeconds = timeStamp.getSeconds();
+					getSecondsHtml.textContent = timerSeconds;
+					// console.log(seconds);
+					// console.log(timerSeconds);
+
+
+					// Making the mp3 play at 30seconds
+					// window.onclick = function() {
+					if (timerSeconds === 30) {
+						console.log('hello');
+						new Audio('takeoff.mp3').play();
+					}
+					// }
+				}, 1000); // END of setInterval
+			}; // window onclick ENDS
+
+			// // console.dir(timeStamp);
+			// console.log(hours);
+			// console.log(minutes);
+			// console.log(seconds);
+
+		});
+		// Document Ready ENDS
+	</script>
+</body>
+
+</html>
