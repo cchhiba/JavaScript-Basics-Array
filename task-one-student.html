@@ -30,11 +30,20 @@
 			padding: 1.5em;
 			background-color: #efefef;
 		}
+
+		button.btn {
+			display: block;
+			width: 100px;
+			margin: 0 auto;
+			margin-top: 40px;
+		}
+
+
 	</style>
 </head>
 
 <body>
-DOM code -----------------------------------------------------------------------
+<!-- DOM code -->
 	<div>
 		<h4 id="output">
 			<span id="hours"></span>
@@ -46,7 +55,9 @@ DOM code -----------------------------------------------------------------------
 		<p id="statement"></p>
 	</div>
 
-START DOM code ------------------------------------------------------------------
+	<button class="btn btn-primary" id="setAlarm">SET ALARM</button>
+
+
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 
 	<script>
@@ -125,6 +136,10 @@ START DOM code -----------------------------------------------------------------
 			// console.log(hours);
 			// console.log(minutes);
 			// console.log(seconds);
+
+			$('#setAlarm').click(function(){
+				console.log('hello');
+			});
 
 		});
 		// Document Ready ENDS

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		form {
+			width: 80%;
+			margin: 0 auto;
+		}
+
+		h2 {
+			text-align: center;
+		}
+
+		.order-panel,
+		.confirmation-panel {
+			text-align: center;
+			float: left;
+			width: 49%;
+			min-height: 75vh;
+			margin: 5px;
+			background-color: #efefef;
+		}
+
+	</style>
+	<title>Document</title>
+</head>
+<body>
+
+	<div class="order-panel">
+		<h2>Order Form</h2>
+
+			<div class="form-group">
+				<label for="customer-name">Name</label>
+				<input class="form-control" id="customerName" placeholder="Your Name Here...">
+			</div>
+			<div class="form-group">
+				<label for="burger">Burger</label>
+				<select class="form-control" id="burger">
+					<option>Hamburger $5.10</option>
+					<option>Vegeterian Burger $5.20</option>
+					<option>Fish Burger $5.30</option>
+					<option>Steak Burger $5.40</option>
+					<option>Tofu Burger $5.50</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="drink">Drink</label>
+				<select class="form-control" id="drink">
+					<option>Glacial Water $2.00</option>
+					<option>Lime Juice $1.00</option>
+					<option>Foxton Fizz $5.00</option>
+					<option>Karma Kola $6.00</option>
+					<option>Rain Water $13.00</option>
+				</select>
+			</div>
+			<button class="btn btn-primary" id="order">Order</button>
+
+	</div>
+
+	<div class="confirmation-panel">
+		<h2>Order Details</h2>
+		<h3 id="custNameDetails"></h3>
+		<ul>
+			<li id="burgerDetails"></li>
+			<li id="drinkDetails"></li>
+		</ul>
+		<h3>Total: $<span id="total"></span></h3>
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script>
+
+
+		// custom js here -----------------------------------------------------------
+
+$(window).ready(function(){
+
+	// creating a click event on the order button
+	$('#order').click(function () {
+
+		updateDetails();
+
+	});
+// CLick event ENDS
+
+function updateDetails() {
+	// Vanilla .js for the rest of my code
+var getCustName = document.getElementById('customerName');
+console.dir(getCustName.value);
+
+
+// grab the persons same and log it to the order details
+	var getCustDetails = document.getElementById('custNameDetails');
+	getCustDetails.textContent = getCustName.value;
+
+	// Grab the buger type and log it to the order form
+var getBurger = document.getElementById('burger').value;
+console.log(getBurger);
+
+// creating an array of strings and slitting the array so we can ge the price as a new string. it separates the $ and the numbers
+var getBurgerArr = getBurger.split('$');
+console.log(getBurgerArr[1]);
+
+var getTotal = document.getElementById('total');
+console.log(getTotal);
+getTotal.textContent = getBurgerArr[1];
+
+
+var getBurgerDetails = document.getElementById('burgerDetails');
+burgerDetails.textContent = document.getElementById('burger').value;
+
+// Grab the Drink type and log it to the order form
+var getDrink = document.getElementById('drink').value;
+console.log(getDrink);
+
+
+
+// creating an array of strings and slitting the array so we can ge the price as a new string. it separates the $ and the numbers
+var getDrinkArr = getDrink.split('$');
+console.log(getDrinkArr[1]);
+console.log(parseFloat(getBurgerArr[1]) + parseFloat(getDrinkArr[1]));
+
+var getTotal = document.getElementById('total');
+
+
+var getDrinkDetails = document.getElementById('drinkDetails');
+drinkDetails.textContent = document.getElementById('drink').value;
+
+
+getTotal.textContent = (parseFloat(getBurgerArr[1]) + parseFloat(getDrinkArr[1]));
+
+};
+
+
+
+});
+
+	</script>
+</body>
+</html>
