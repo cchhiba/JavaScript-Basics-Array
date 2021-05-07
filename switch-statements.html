@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>switch statements</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+	<h1>Swtich Statements</h1>
+	<h2>Day of the week</h2>
+	<input id="dayOF" type="text" name="" value="">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+	<script>
+	// basic switch statement with breaks
+		var x = 3;
+
+		switch (x) {
+			case 1:
+				console.log('x is one');
+				break;
+			case 2:
+				console.log('x is two');
+				break;
+			case 3:
+				console.log('x is three');
+				break;
+			default:
+				console.log('x is invalid');
+
+	// END of x switch
+		}
+
+
+		// multiple switch statements
+
+		var fruit = 'mango';
+
+		switch (fruit) {
+			case 'apple':
+			case 'mango':
+			case 'pinapple':
+			console.log(fruit + ' is definitely a fruit');
+			break;
+			default:
+			console.log(fruit + ' is not a fruit');
+			break;
+			// END of fruit switch
+		}
+
+
+		//switch day of the week statement
+
+		var dayOfWeek = 5;
+
+		switch(dayOfWeek) {
+			case 1:
+			console.log('Today is Monday');
+			break;
+
+			case 2:
+			console.log('Today is Tue');
+			break;
+
+			case 3:
+			console.log('Today is wed');
+			break;
+
+			case 4:
+			console.log('Today is thur');
+			break;
+
+			case 5:
+			console.log('Today is fri');
+			break;
+
+			case 6:
+			console.log('Today is sat');
+			break;
+
+			case 7:
+			console.log('Today is sun');
+			break;
+
+			default:
+			console.log('invalid number date');
+			break;
+
+		}
+
+		var dayOfDetails = document.getElementById('dayOf');
+		dayOfDetails.textContent = 
+
+	</script>
+</body>
+
+</html>
