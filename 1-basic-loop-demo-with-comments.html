@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Function Basics</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		ul {
+			margin: 25px;
+			border: 1px solid;
+		}
+
+		ul li {
+			font-size: 44px;
+			font-weight: 400;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- <ul>
+		<li class="one">One</li>
+		<li class="two">Two</li>
+		<li class="three">Three</li>
+		<li class="four">Four</li>
+		<li class="five">Five</li>
+	</ul> -->
+
+	<ul id="animals">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+	<button id="animalsBtn" type="button" name="button">Animals</button>
+
+	<ul id="cities">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+	<button id="citiesBtn" type="button" name="button">Cities</button>
+
+	<ul id="fish">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+	<button id="fishBtn" type="button" name="button">Fish</button>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<script>
+		// **Task read and run the code to improve your understanding...open console
+
+		$(document).ready(function() {
+
+			// When the loop first runs var i is set to 0
+			// If i is less than 10 ... increment i by 1 '++'
+			// Loop runs until i IS NOT less than 10 / If i is less than 5 another loope cycle will run
+
+			// var i;
+			//
+			// for (i = 0; i < 8; i++)  {
+			// 	// Every loop cycle the code within the brackets will run
+			//   // console.log(i);
+			//
+			// 	if (i === 0) {
+			// 		console.log('C');
+			// 	}
+			//
+			// 	if (i === 1) {
+			// 		console.log('H');
+			// 	}
+			//
+			//
+			// 	if (i === 2 || i === 7) {
+			// 		console.log('A');
+			// 	}
+			//
+			//
+			// 	if (i === 3) {
+			// 		console.log('R');
+			// 	}
+			//
+			// 	if (i === 4) {
+			// 		console.log('I');
+			// 	}
+			//
+			// 	if (i === 5 || i === 6) {
+			// 		console.log('S');
+			// 	}
+			//
+			// 	// if (i === 6) {
+			// 	// 	console.log('S');
+			// 	// }
+			//
+			// 	// if (i === 7) {
+			// 	// 	console.log('A');
+			// 	// }
+			//
+			// }
+
+			// loop ENDS
+			// variables at the top of script
+			// var arrayFruits = ['apples', 'oranges', 'apples', 'bananas', 'pears', 'strawberries', 'apples', 'pineapples', 'kiwifruit', 'oranges'];
+			//
+			var arrayAnimals = ['Bengal tiger', 'Giant Turtle', 'Rabbit', 'Sloth', 'Kiwi', 'Hammer head shark'];
+			var citiesOfWorld = ['Wellington', 'Paris', 'Santiago', 'Bogata', 'Kansas City', 'Amsterdam'];
+			var nzFish = ['White bait', 'Cod', 'Hoki', 'Flounder', 'Moki', 'Kina'];
+			var arrayWithManyTypes = [1, 2, 3, 'hello ', 12, 55, 'this ', ' is', ' a', true, 89, 'string.', false];
+			//
+			// function runLoopA() {
+
+
+
+			// var getKiwifruit = arr[0];
+
+			// Starts
+			// What does the highlighted code mean?
+			// for (i = 0; i < 6; i++)  {
+			// 	console.log(arr[i]);
+			// }
+			// ENDS
+
+			// 	for (var i = 0; i < arrayFruits.length; i++) {
+			// 		// console.log(arrayFruits[i]);
+			//
+			// 		// log out all apples to the console
+			//
+			// 		if (arrayFruits[i] === 'apples') {
+			// 			console.log(arrayFruits[i]);
+			// 		}
+			//
+			// 		if (arrayFruits[i] === 'oranges') {
+			// 			console.log(arrayFruits[i]);
+			// 		}
+			//
+			// 	}
+			//
+			// }; // END of runLoopA function
+
+			// runLoopA(); // Call the function
+
+			// ****** Pseudocode *******
+			// 1. Get my hands on the list elements
+			// 2. Check with console
+			// 3. See if I can update the list elements
+			// *********
+			// 4. Put list element code in the loop
+			// 5. Update loop to add animals to list elements
+
+
+			// Start of animal for loop
+			// for (var i = 0; i < arrayAnimals.length; i++) {
+			// 	console.log(arrayAnimals[i]);
+			// }
+			function updateAnimals() {
+
+				var getListEls = document.querySelectorAll('#animals li');
+				console.dir(getListEls);
+
+				// **** for loop
+				for (var i = 0; i < getListEls.length; i++) {
+					// getListEls and update with animal array content
+					getListEls[i].textContent = arrayAnimals[i];
+				}
+				// end of updateAnimals function
+			};
+
+			// When you click the animals button, the list will appear on screen
+			$('#animalsBtn').click(function() {
+				// console.log('working');
+				updateAnimals();
+
+
+			});
+
+			// for (var i = 0; i < arrayAnimals.length; i++) {
+			// 	console.log(arrayAnimals[i]);
+			// }
+
+
+
+
+
+
+			// 1. Make a new array with cities of the world.
+			// 2. Make another list with the same number of list elements as items in your array.
+			// 3. Update the list elements with the city names
+
+
+
+			function updateCities() {
+				var getCities = document.querySelectorAll('#cities li');
+				console.log(getCities);
+
+
+				// for (var i = 0; i < citiesOfWorld.length; i++) {
+				// 	console.log(citiesOfWorld[i]);
+				// }
+
+				for (var i = 0; i < getCities.length; i++) {
+					// getCities and update with citiesOfWorld array content
+					getCities[i].textContent = citiesOfWorld[i];
+				}
+				// end of updateCities function
+			};
+
+			// When you click the animals button, the list will appear on screen
+			$('#citiesBtn').click(function() {
+				// console.log('working');
+				// calling the function
+				updateCities();
+
+
+			});
+
+			// 1. Create an array of nz fish species. Loop over the
+			// array and update a 3rd list (#fish li).
+
+			// 2. Create 3 buttons in the DOM. Give each button a
+			// unique id. Make each button run each update loop/function
+			// when clicked.
+
+			// 3. Use this array - var arrayWithManyTypes = [1, 2, 3, 'hello ', 12, 55, 'this ', ' is', ' a', true, 89, 'string.', false];
+			// (i) Create a loop that console.logs only the numbers of the array.
+			// (ii) Create a loop that console.logs any number greater than 10 and less than 80.
+			// (iii) Create another loop that console.logs all of the string words in the array
+			// (iv) In the same loop update the DOM with a paragraph and 5 spans. Have the loop update the paragraphs 5 spans with the string words.
+
+			function updateFish() {
+
+				var getFish = document.querySelectorAll('#fish li');
+				console.log(getFish);
+
+				// 1. Create an array of nz fish species. Loop over the
+				// array and update a 3rd list (#fish li).
+				// for (var i = 0; i < nzFish.length; i++) {
+				// 	console.log(nzFish[i]);
+				// }
+				for (var i = 0; i < getFish.length; i++) {
+					// getFish and update with citiesOfWorld array content
+					getFish[i].textContent = nzFish[i];
+				}
+
+
+			}; // end of updateFish function
+
+
+
+			// When you click the animals button, the list will appear on screen
+			$('#fishBtn').click(function() {
+				// console.log('working');
+				// calling the function
+				updateFish();
+
+			});
+
+
+			for (var i = 0; i < arrayWithManyTypes.length; i++) {
+				// console.log(arrayWithManyTypes[i]);
+				// A conditional looking data type inside the loop
+				// if (typeof arrayWithManyTypes[i] === 'number') {
+				// 	console.log('is a number');
+				// 	console.log(arrayWithManyTypes[i]);
+				// }
+
+
+		// (ii) Create a loop that console.logs any number greater than 10 and less than 80.
+				if ((typeof arrayWithManyTypes[i] === 'number') && (arrayWithManyTypes[i] < 10 &&  arrayWithManyTypes[i] > 80)) {
+					console.log('is a number');
+					console.log(arrayWithManyTypes[i]);
+
+				}
+			};
+
+
+
+
+
+
+
+
+		}); // END of document function that wraps ALL the code
+	</script>
+</body>
+
+</html>
