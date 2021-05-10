@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Function Basics</title>
+	<title>Loop Basics</title>
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<style>
@@ -119,12 +119,39 @@
 			// variables at the top of script
 			// var arrayFruits = ['apples', 'oranges', 'apples', 'bananas', 'pears', 'strawberries', 'apples', 'pineapples', 'kiwifruit', 'oranges'];
 			//
+
+			// All arrays -----------------------------------------------------
 			var arrayAnimals = ['Bengal tiger', 'Giant Turtle', 'Rabbit', 'Sloth', 'Kiwi', 'Hammer head shark'];
 			var citiesOfWorld = ['Wellington', 'Paris', 'Santiago', 'Bogata', 'Kansas City', 'Amsterdam'];
 			var nzFish = ['White bait', 'Cod', 'Hoki', 'Flounder', 'Moki', 'Kina'];
 			var arrayWithManyTypes = [1, 2, 3, 'hello ', 12, 55, 'this ', ' is', ' a', true, 89, 'string.', false];
-			//
+
+	// All click events -----------------------------------------------------
+
+	// When you click the animals button, the list will appear on screen
+	$('#animalsBtn').click(function() {
+		// console.log('working');
+		updateAnimals();
+	});
+
+	// When you click the cities button, the list will appear on screen
+	$('#citiesBtn').click(function() {
+		// console.log('working');
+		// calling the function
+		updateCities();
+	});
+
+	// When you click the fish button, the list will appear on screen
+	$('#fishBtn').click(function() {
+		// console.log('working');
+		// calling the function
+		updateFish();
+	});
+
+
+
 			// function runLoopA() {
+
 
 
 
@@ -182,13 +209,6 @@
 				// end of updateAnimals function
 			};
 
-			// When you click the animals button, the list will appear on screen
-			$('#animalsBtn').click(function() {
-				// console.log('working');
-				updateAnimals();
-
-
-			});
 
 			// for (var i = 0; i < arrayAnimals.length; i++) {
 			// 	console.log(arrayAnimals[i]);
@@ -221,14 +241,6 @@
 				// end of updateCities function
 			};
 
-			// When you click the animals button, the list will appear on screen
-			$('#citiesBtn').click(function() {
-				// console.log('working');
-				// calling the function
-				updateCities();
-
-
-			});
 
 			// 1. Create an array of nz fish species. Loop over the
 			// array and update a 3rd list (#fish li).
@@ -244,18 +256,39 @@
 			// (iv) In the same loop update the DOM with a paragraph and 5 spans. Have the loop update the paragraphs 5 spans with the string words.
 
 			function updateFish() {
-
+				var arrayTaste = [' is delish', ' sounds yummy', ' is not good', ' is fab'];
 				var getFish = document.querySelectorAll('#fish li');
 				console.log(getFish);
 
+
 				// 1. Create an array of nz fish species. Loop over the
 				// array and update a 3rd list (#fish li).
-				// for (var i = 0; i < nzFish.length; i++) {
-				// 	console.log(nzFish[i]);
-				// }
+				for (var i = 0; i < nzFish.length; i++) {
+				console.log(nzFish[i]);
+				}
+
 				for (var i = 0; i < getFish.length; i++) {
 					// getFish and update with citiesOfWorld array content
 					getFish[i].textContent = nzFish[i];
+					// getFish and update with fish array content
+					// getFish[i].textContent = nzyFish[i];
+
+					if (nzFish[i] === 'Cod') {
+						getFish[i].textContent = nzFish[i] + arrayTaste[0];
+					}
+					// If the Flounder is found, set it to ' sounds yummy'
+					if (nzFish[i] === 'Flounder') {
+						getFish[i].textContent = nzFish[i] + arrayTaste[1];
+					}
+
+					if (nzFish[i] === 'Hoki') {
+						getFish[i].textContent = nzFish[i] + arrayTaste[2];
+					}
+
+					if (nzFish[i] === 'Kina') {
+						getFish[i].textContent = nzFish[i] + arrayTaste[3];
+					}
+
 				}
 
 
@@ -263,36 +296,28 @@
 
 
 
-			// When you click the animals button, the list will appear on screen
-			$('#fishBtn').click(function() {
-				// console.log('working');
-				// calling the function
-				updateFish();
-
-			});
-
-
+			// (i) Create a loop that console.logs only the numbers of the array.
 			for (var i = 0; i < arrayWithManyTypes.length; i++) {
 				// console.log(arrayWithManyTypes[i]);
 				// A conditional looking data type inside the loop
-				// if (typeof arrayWithManyTypes[i] === 'number') {
+				if (typeof arrayWithManyTypes[i] === 'number') {
 				// 	console.log('is a number');
-				// 	console.log(arrayWithManyTypes[i]);
-				// }
-
-
-		// (ii) Create a loop that console.logs any number greater than 10 and less than 80.
-				if ((typeof arrayWithManyTypes[i] === 'number') && (arrayWithManyTypes[i] < 10 &&  arrayWithManyTypes[i] > 80)) {
-					console.log('is a number');
-					console.log(arrayWithManyTypes[i]);
-
+				console.log(arrayWithManyTypes[i]);
 				}
-			};
 
 
+				// (ii) Create a loop that console.logs any number greater than 10 and less than 80.
+			// 	 if (arrayWithManyTypes[i] === 'number' && i > 10 && i < 80) {
+			// 	console.log('is a number');
+			// 	console.log(arrayWithManyTypes[i]);
+			//
+			// }
 
+			for (var i = 0; i < arrayWithManyTypes.length; arrayWithManyTypes[i] === 'number'; i > 10; i < 80; i++) {
+				console.log(arrayWithManyTypes[i]);
+			}
 
-
+		 }; // END of for arrayWithManyTypes Loop
 
 
 
