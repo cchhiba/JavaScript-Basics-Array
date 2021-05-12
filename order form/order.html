@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		form {
+			width: 80%;
+			margin: 0 auto;
+		}
+
+		h2 {
+			text-align: center;
+		}
+
+		.order-panel,
+		.confirmation-panel {
+			text-align: center;
+			float: left;
+			width: 49%;
+			min-height: 75vh;
+			margin: 5px;
+			background-color: #efefef;
+		}
+	</style>
+	<title>Document</title>
+</head>
+
+<body>
+
+	<div class="order-panel">
+		<h2>Order Form</h2>
+
+		<!-- Customer Name  -->
+		<div class="form-group">
+			<label for="customer-name">Name</label>
+			<input class="form-control" id="customerName" placeholder="Your Name Here...">
+		</div>
+
+		<!-- Burger Selection  -->
+		<div class="form-group">
+			<label for="burger">Burger</label>
+			<select class="form-control" id="burger">
+				<option>Hamburger $12.95</option>
+				<option>Vegeterian Burger $5.20</option>
+				<option>Fish Burger $18.95</option>
+				<option>Steak Burger $18.95</option>
+				<option>Tofu Burger $10.95</option>
+			</select>
+		</div>
+
+		<!-- Drinks Selection  -->
+		<div class="form-group">
+			<label for="drinks">Drinks</label>
+			<select class="form-control" id="drinks">
+				<option>Coke $2.95</option>
+				<option>Sprite $2.20</option>
+			</select>
+		</div>
+
+		<button class="btn btn-primary" id="order">Order</button>
+
+	</div>
+
+	<!-- Order Details Screen -->
+	<div class="confirmation-panel">
+		<h2>Order Details</h2>
+		<h3 id="customerNameDetails"></h3>
+		<ul>
+			<li id="burgerDetails"></li>
+			<li id="drinksDetails"></li>
+		</ul>
+		<h3>Total:<span id="amountTotal"></span></h3>
+
+		<h2>Click the button to see your promotional deal</h2>
+
+
+		<ul id="promo1List">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+
+		<ul id="promo2List">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+
+		<ul id="promo3List">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+
+
+		<button id="promoBtn" type="button" name="button">Promo Button</button>
+
+	</div>
+	<!-- Order Details Screen ENDS -->
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script>
+		// custom js here
+
+		$(window).ready(function() {
+
+			// Variables created here --------------------------------------------------
+
+			var promo1 = ['1 fries', '1 hash brown coupon', '1 free sauce'];
+			var promo2 = ['1 burger', '1 drink', '1 ice cream'];
+			var promo3 = ['1 burger', '2 drinks', '2 ice creams', '1 car wash ticket'];
+
+			var cloud = {
+				total: 'nothing yet'
+			};
+
+			// Variables ENDS --------------------------------------------------
+
+			// Click events created here --------------------------------------------------
+
+			// 1. Add a click event to the order button
+			// remember to console.log to test the click
+			$('#order').click(function() {
+				// Calling the function
+				updateDetails();
+			});
+			// click Event ENDS
+
+
+			// 1. Add a click event to the PromoBtn button
+			$('#promoBtn').click(function() {
+				// Calling the updatePromo1 function
+				// console.log('is this working');
+				updatePromoAll();
+			});
+
+
+			// Click events END --------------------------------------------------
+
+			function updateDetails() {
+				// Get CUSTOMER NAME info and output to details page
+				// Vanilla .js for the rest of my code
+				// Getting customer name input
+				var getCustName = document.getElementById('customerName');
+				console.dir(getCustName.value);
+				// Applying customer input for name to the order details page/div
+				var getCustDetails = document.getElementById('customerNameDetails');
+				getCustDetails.textContent = getCustName.value;
+
+
+				// Do the same for the SELECT BURGER input
+				// Get the value of the burger select input
+				var getBurger = document.getElementById('burger').value;
+				// Gets the html list element on the right hand side details page
+				var getBurgerList = document.getElementById('burgerDetails');
+				// Changes the text of the list element -- updates the details page
+				getBurgerList.textContent = getBurger;
+
+				// Gets the html list element on the right hand side details page
+				var getDrinksList = document.getElementById('drinksDetails');
+				// Get the DRINKS selector value
+				var getDrinks = document.getElementById('drinks').value;
+				// Changes the text of the list element -- updates the details page
+				getDrinksList.textContent = getDrinks;
+
+				// *** WORKING WITH NUMBERS AND THE FINAL PRICE ***
+				// This splits the string so we can get the price as a new string
+				// Convert the string into an array with the split() method, split at the $ sign mark
+				var getBurgerArr = getBurger.split('$');
+				// Now we are checking the second item in the array
+				console.log(getBurgerArr[1]);
+				// Convert the string into an array with the split() method, split at the $ sign mark
+				var getDrinksArr = getDrinks.split('$');
+				console.log(getDrinksArr[1]);
+				// Get the total/amount element from the details page
+				var getTotal = document.getElementById('amountTotal');
+				// Add the 2 prices together to get the total
+				var finalTotal = parseFloat(getBurgerArr[1]) + parseFloat(getDrinksArr[1]);
+				// Log the total to the console
+				console.log(finalTotal.toFixed(2));
+
+				cloud.total = finalTotal.toFixed(2);
+
+				// Add the burger price to the element
+				getTotal.textContent = finalTotal.toFixed(2);
+
+
+			};
+			// ENDS
+
+			// inside async
+			// Function which updates promo list elements --------------------------------------------------
+			// STARTS of updatePromo1 function
+			function updatePromoAll() {
+
+
+				var getPromo1 = document.querySelectorAll('#promo1List li');
+				var getPromo2 = document.querySelectorAll('#promo2List li');
+				var getPromo3 = document.querySelectorAll('#promo3List li');
+				console.log(getPromo1);
+
+// for loop with conditions
+				for (var i = 0;
+					(i < promo1.length) || (i < promo2.length); i++) {
+					// console.log(promo1[i])
+					if (cloud.total < 15) {
+						getPromo1[i].textContent = promo1[i];
+					} else if (cloud.total > 15 && cloud.total < 20){
+						getPromo2[i].textContent = promo2[i];
+					} else if (cloud.total > 20){
+						console.log('grrated');
+					} else {
+						console.log('inished');
+					}
+				} // END of loop with conditions
+
+
+			}; // END of updatePromo1 function
+
+
+		}); // END
+	</script>
+</body>
+
+</html>
