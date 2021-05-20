@@ -10,9 +10,12 @@
 		// or 'the highest average grade' for all students.
 		// Anums is an array of all the average grades
 		function findMax(aNums) {
+// imax equals the first number of the array Anums
 			var iMax = aNums[0];
 			for (var iCount = 0; iCount < aNums.length; iCount++) {
+				// if imax is less than aNums[iCount] then reset iMax
 				if (iMax < aNums[iCount]) {
+					// aNums is going to replace iMax
 					iMax = aNums[iCount];
 					console.dir(iCount);
 				}
@@ -52,6 +55,8 @@
 			aAverageGrades.push(fAverage);
 		}
 		// The finds the top student's average grade across the 3 subjects
+
+		// feeds aAverageGrades in to findMax function
 		var iTopGrade = findMax(aAverageGrades);
 		console.log(iTopGrade);
 		console.dir(iTopGrade);

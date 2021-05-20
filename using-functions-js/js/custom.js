@@ -44,7 +44,7 @@ var cloudObject = {
 // start of click function
 function clickButton () {
 // reference the cloud
-  getDarkButton.onclick = function() {
+  cloudObject.darkBtn.onclick = function() {
     // console.log('dark button working');
 
     // adding a class to body and changing the colour
@@ -68,7 +68,7 @@ function clickButton () {
 
 
 // onclick event on the variable
-  getUpdateButton.onclick = function() {
+  cloudObject.updateBtn.onclick = function() {
 
     // creating varibles to select ids within the dom
     var myDiv = document.querySelector('.holder');
