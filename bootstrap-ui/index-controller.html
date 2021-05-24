@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bootstrap UI for JS - page 2</title>
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+<style>
+  body {
+    background-color: black;
+  }
+  h1{
+    color: black;
+  }
+  .col-sm {
+    height: 170px;
+    align: center;
+    /* border: 1px blue solid; */
+    background-color: black;
+    color: black
+  }
+  .middle-box {
+    background-color: #efefef;
+    border: 1px solid gray;
+  }
+  .fa {
+    font-size: 50px;
+  }
+</style>
+</head>
+<body>
+  <h1>hello this is page 2</h1>
+  <!-- from bootstrap - https://getbootstrap.com/docs/4.6/components/tooltips/ -->
+  <!-- using bootstraps grid - start of grid container-->
+  <div class="container-fluid text-center">
+    <!-- row one -->
+    <div class="row">
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm middle-box">
+        <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+      </div>
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm">
+        One of three columns
+      </div>
+    </div>
+    <!-- row two -->
+    <div class="row">
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm middle-box">
+        <i class="fa fa-fighter-jet" aria-hidden="true"></i>
+      </div>
+      <div class="col-sm middle-box">
+        <!-- adding a tool tip to font awesome power-off icon -->
+        <i id="tippy" class="fa fa-power-off" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Turn lights off"></i>
+      </div>
+      <div class="col-sm middle-box">
+        <i class="fa fa-bath" aria-hidden="true"></i>
+      </div>
+      <div class="col-sm">
+        One of three columns
+      </div>
+    </div>
+    <!-- row three -->
+    <div class="row">
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm middle-box">
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
+      </div>
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm">
+        One of three columns
+      </div>
+    </div>
+    <!-- end of grid container -->
+  </div>
+  <script src="js/jquery.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script type="text/javascript">
+    // Showing tooltip with same speed
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip({
+        delay: 200 // show tooltip after 200 milliseconds
+      });
+    });
+  </script>
+</body>
+</html>
