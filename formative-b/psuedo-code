@@ -1,0 +1,37 @@
+// Pusedo code STARTS **********************************************************
+
+// Task one - initial set up - read through css, html and review instructions
+  // 1a: create a function to wrap your code in
+  // 1b. create a variable for the update btn
+  // 1c: create a click function and test
+  // 1d: call function at end of page
+
+// Task two - manipulate image
+    // 2a: inside the click function create a variable which targets the image select
+        // (add .value so js knows to reference the option value)
+    // 2b: create a varible which targets the card class (add class in DOM)
+    // 2c: write a conditional which if christmas value is selected (console log here)
+    // 2d: once if conditional is captured in the console, use new var to add src mantipulation
+    // 2e: repeat rule once its working for Christams image
+
+// Task three - manitpulate background colour
+    // 3a: create var and capture background select id (value)
+    // 3b: create var and capture card id
+    // 3c: console log both vars
+    // 3d: create if conditional that target a background colour value. log to the console
+    // 3e: use add and remove class referencing the classes in css
+
+// Task four - manitpulate fonts
+    // 4a: repeat steps above except target font ids and classes
+
+// Task five - manitpulate border
+    // 5a: repeat steps above except target border ids and classes
+
+// Task six - grab textarea and output to card class
+    // a: find out where in the html the message is meant to go.
+    // b: create a varible for getting the textarea // IDEA:
+    // c: create a varible for getting the h1 class, create a new one
+    // d: use .textContent to output the message to the dom
+// Task seven - wrap each section in its own function and call each function within
+
+// Pusedo code ENDS **********************************************************
