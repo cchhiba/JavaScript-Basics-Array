@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- maxbox cdns must be at the top -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+  <style media="screen">
+    #map {
+      margin: 20px;
+    }
+
+    .marker {
+      /* background-image: url('mapbox-icon.png'); */
+      background-image: url('lucent.png');
+      background-size: cover;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div id='map' style='width: 900px; height: 800px;'></div>
+
+  <button id="fly">Fly to La Sagrada Familiar</button>
+  <button id="flyA">Fly to Holly Hutt</button>
+  <button id="flyB">Fly to Port Barton</button>
+
+
+
+  <script>
+    // TO MAKE THE MAP APPEAR YOU MUST
+    // ADD YOUR ACCESS TOKEN FROM
+    // https://account.mapbox.com
+    // start of map function
+    mapboxgl.accessToken = 'pk.eyJ1Ijoic2Vhc2hlbGxzbnoiLCJhIjoiY2twNG9lZmc2MDQ1bzJ1cjBjN3VnbnQxMSJ9.1jS2lhqq4jZ5bBGTda1prA';
+  var map = new mapboxgl.Map({
+  container: 'map',
+  zoom: 13.1,
+  center: [-114.34411, 32.6141],
+  pitch: 85,
+  bearing: 80,
+  style: 'mapbox://styles/mapbox-map-design/ckhqrf2tz0dt119ny6azh975y'
+  });
+
+  map.on('load', function () {
+  map.addSource('mapbox-dem', {
+  'type': 'raster-dem',
+  'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
+  'tileSize': 512,
+  'maxzoom': 8
+  });
+  // add the DEM source as a terrain layer with exaggerated height
+  map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
+
+  // add a sky layer that will show when the map is highly pitched
+  map.addLayer({
+  'id': 'sky',
+  'type': 'sky',
+  'paint': {
+  'sky-type': 'atmosphere',
+  'sky-atmosphere-sun': [0.0, 0.0],
+  'sky-atmosphere-sun-intensity': 15
+  }
+  });
+});
+  // end of map function
+
+  // object with data geojason
+    console.dir(map);
+    var geojson = {
+      type: 'FeatureCollection',
+      features: [{
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [174.047522, -39.264776]
+        },
+        properties: {
+          title: 'Mapbox',
+          description: 'Holly Hutt'
+        }
+      },
+
+
+      {
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [174.070237, -39.058356 ]
+        },
+        properties: {
+          title: 'Mapbox',
+          description: 'Len Lye Centre'
+        }
+      }]
+
+    };
+    // end of geojason object
+
+    // add markers to map
+geojson.features.forEach(function(marker) {
+
+  // create a HTML element for each feature
+  var el = document.createElement('div');
+  el.className = 'marker';
+
+  // make a marker for each feature and add to the map
+  new mapboxgl.Marker(el)
+    .setLngLat(marker.geometry.coordinates)
+    .addTo(map);
+});
+  // end of marker map function
+
+    document.getElementById('fly').addEventListener('click', function () {
+    // Fly to a random location by offsetting the point -74.50, 40
+    // by up to 5 degrees.
+    map.flyTo({
+    center: [2.174299, 41.404049],
+    essential: true // this animation is considered essential with respect to prefers-reduced-motion
+    });
+});
+
+document.getElementById('flyA').addEventListener('click', function () {
+    // Fly to a random location by offsetting the point -74.50, 40
+    // by up to 5 degrees.
+    map.flyTo({
+    center: [174.047522, -39.264776 ],
+    essential: true // this animation is considered essential with respect to prefers-reduced-motion
+    });
+});
+
+document.getElementById('flyB').addEventListener('click', function () {
+    // Fly to a random location by offsetting the point -74.50, 40
+    // by up to 5 degrees.
+    map.flyTo({
+    center: [119.177565, 10.410817],
+    essential: true, // this animation is considered essential with respect to prefers-reduced-motion
+    zoom: 18
+    });
+});
+
+  </script>
+
+
+</body>
+
+</html>
