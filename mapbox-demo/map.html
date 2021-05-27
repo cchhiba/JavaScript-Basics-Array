@@ -9,19 +9,38 @@
   <!-- maxbox cdns must be at the top -->
   <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <style media="screen">
-    #map {
-      margin: 20px;
-    }
 
-    .marker {
+    body {
+       margin: 0; padding: 0;
+     }
+
+    #map {
+       /* position: absolute; top: 0; bottom: 0; width: 100%; */
+     }
+
+    /* .marker { */
       /* background-image: url('mapbox-icon.png'); */
-      background-image: url('lucent.png');
+      /* background-image: url('mapbox-icon.png');
       background-size: cover;
       width: 50px;
       height: 50px;
       border-radius: 50%;
       cursor: pointer;
+    } */
+
+    #marker {
+    background-image: url('mapbox-icon.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    }
+
+    .mapboxgl-popup {
+    max-width: 200px;
     }
 
   </style>
@@ -31,10 +50,31 @@
 
   <div id='map' style='width: 900px; height: 800px;'></div>
 
-  <button id="fly">Fly to La Sagrada Familiar</button>
-  <button id="flyA">Fly to Holly Hutt</button>
-  <button id="flyB">Fly to Port Barton</button>
+  <div>
+    <button id="fly">Cardrona</button>
+    <button id="flyA">Franz</button>
+    <!-- <button id="flyB">Paritutu Rock</button> -->
+  </div>
 
+<!-- Bootstrap modal -->
+<!-- Modal -->
+<div class="modal fade" id="cardronaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
   <script>
@@ -43,12 +83,15 @@
     // https://account.mapbox.com
     // start of map function
     mapboxgl.accessToken = 'pk.eyJ1Ijoic2Vhc2hlbGxzbnoiLCJhIjoiY2twNG9lZmc2MDQ1bzJ1cjBjN3VnbnQxMSJ9.1jS2lhqq4jZ5bBGTda1prA';
+  var cardrona = [168.948840, -44.872553];
+  var franz = [170.188144, -43.474025];
   var map = new mapboxgl.Map({
   container: 'map',
   zoom: 13.1,
-  center: [-114.34411, 32.6141],
-  pitch: 85,
-  bearing: 80,
+  center: cardrona,
+  pitch: 83,
+  // bearing: 80,
+  // style: 'mapbox://styles/mapbox/light-v10'
   style: 'mapbox://styles/mapbox-map-design/ckhqrf2tz0dt119ny6azh975y'
   });
 
@@ -76,56 +119,113 @@
   // end of map function
 
   // object with data geojason
-    console.dir(map);
-    var geojson = {
-      type: 'FeatureCollection',
-      features: [{
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [174.047522, -39.264776]
-        },
-        properties: {
-          title: 'Mapbox',
-          description: 'Holly Hutt'
-        }
-      },
-
-
-      {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [174.070237, -39.058356 ]
-        },
-        properties: {
-          title: 'Mapbox',
-          description: 'Len Lye Centre'
-        }
-      }]
-
-    };
+    // console.dir(map);
+    // var geojson = {
+    //   type: 'FeatureCollection',
+    //   features: [{
+    //     type: 'Feature',
+    //     geometry: {
+    //       type: 'Point',
+    //       coordinates: [174.047522, -39.264776]
+    //     },
+    //     properties: {
+    //       title: 'Mapbox',
+    //       description: 'Holly Hutt'
+    //     }
+    //   },
+    //
+    //   {
+    //     type: 'Feature',
+    //     geometry: {
+    //       type: 'Point',
+    //       coordinates: [174.070237, -39.058356]
+    //     },
+    //     properties: {
+    //       title: 'Mapbox',
+    //       description: 'Len Lye Centre'
+    //     }
+    //   },
+    //
+    //   {
+    //     type: 'Feature',
+    //     geometry: {
+    //       type: 'Point',
+    //       coordinates: [174.022357, -39.058005]
+    //     },
+    //     properties: {
+    //       title: 'Mapbox',
+    //       description: 'Partutu Rock'
+    //     }
+    //   }]
+    //
+    // };
     // end of geojason object
 
     // add markers to map
-geojson.features.forEach(function(marker) {
-
-  // create a HTML element for each feature
-  var el = document.createElement('div');
-  el.className = 'marker';
-
-  // make a marker for each feature and add to the map
-  new mapboxgl.Marker(el)
-    .setLngLat(marker.geometry.coordinates)
-    .addTo(map);
-});
+// geojson.features.forEach(function(marker) {
+//
+//   // create a HTML element for each feature
+//   var el = document.createElement('div');
+//   el.className = 'marker';
+//
+//   // make a marker for each feature and add to the map
+//   new mapboxgl.Marker(el)
+//     .setLngLat(marker.geometry.coordinates)
+//     .addTo(map);
+// });
   // end of marker map function
+
+// ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+  // create the popup
+  var cardronaPopup = new mapboxgl.Popup({ offset: 25 }).setText(
+  'Casual studios & apartments in a laid-back all-season resort offering snow sports & biking trails.'
+  );
+
+  // create DOM element for the marker
+  // var el = document.createElement('div');
+  //   el.id = 'marker';
+
+    var el = document.querySelector('div');
+      el.id = 'marker';
+
+  // create the marker
+  new mapboxgl.Marker(el)
+    .setLngLat(cardrona)
+    .setPopup(cardronaPopup) // sets a popup on this marker
+    .addTo(map);
+
+
+      // cardronaPopup.onclick = function () {
+      //     console.log('is this working');
+      // };
+
+
+    // create the popup
+    var franzPopup = new mapboxgl.Popup({ offset: 25 }).setText(
+    '7.5-mi.-long glacier accessible by an 8-hour hike or by helicopter for guided tours at the top.'
+    );
+
+    // create DOM element for the marker
+    var el = document.createElement('#cardronaModal');
+      // el.id = 'marker';
+
+    // create the marker
+    new mapboxgl.Marker(el)
+      .setLngLat(franz)
+      .setPopup(franzPopup) // sets a popup on this marker
+      .addTo(map);
+
+
+  // ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
     document.getElementById('fly').addEventListener('click', function () {
     // Fly to a random location by offsetting the point -74.50, 40
     // by up to 5 degrees.
     map.flyTo({
-    center: [2.174299, 41.404049],
+    center: [168.948840, -44.872553],
     essential: true // this animation is considered essential with respect to prefers-reduced-motion
     });
 });
@@ -134,23 +234,31 @@ document.getElementById('flyA').addEventListener('click', function () {
     // Fly to a random location by offsetting the point -74.50, 40
     // by up to 5 degrees.
     map.flyTo({
-    center: [174.047522, -39.264776 ],
+    center: [170.188144, -43.474025],
     essential: true // this animation is considered essential with respect to prefers-reduced-motion
     });
 });
+//
+// document.getElementById('flyB').addEventListener('click', function () {
+//     // Fly to a random location by offsetting the point -74.50, 40
+//     // by up to 5 degrees.
+//     map.flyTo({
+//     center: [174.022357, -39.058005],
+//     essential: true, // this animation is considered essential with respect to prefers-reduced-motion
+//     // zoom: 18
+//     });
+// });
 
-document.getElementById('flyB').addEventListener('click', function () {
-    // Fly to a random location by offsetting the point -74.50, 40
-    // by up to 5 degrees.
-    map.flyTo({
-    center: [119.177565, 10.410817],
-    essential: true, // this animation is considered essential with respect to prefers-reduced-motion
-    zoom: 18
-    });
-});
+    // mucking around with bootstap and mapbox
+    var myModal = document.getElementById('cardronaModal')
+    var myInput = document.getElementById('myInput')
+
+    myModal.addEventListener('shown.bs.modal', function () {
+    myInput.focus()
+    })
 
   </script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
 </body>
 
