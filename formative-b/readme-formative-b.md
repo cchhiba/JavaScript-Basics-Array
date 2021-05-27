@@ -1,31 +1,31 @@
 # Foundation Coding | Formative 2.2
 ## Charissa Chhiba
 
-###### About :sparkles:
+### About :sparkles:
 
-**This is a single page app which displays a card. The application has the functionality to show and hide UI components based on user interaction. You are have a capability to personalise a card to your liking.**\
+**This is a single page app which displays a card. The application has the functionality to show and hide UI components based on user interaction. You have the capability to personalise a card to your liking.**
 
-###### Key Folders and Pages :metal:
+### Key Folders and Pages :metal:
 
-**Download the zip file and open it in your editior (I use Atom). right click on index.html and select open in browser. The app should appear in your broswer (I use Chrome 88.0.4324.192)**\
+**Download the zip file and open it in your editor (I use Atom). Right click on the index.html file to open it in your browser. The app should now appear in your browser (I use Chrome 88.0.4324.192)**
 
-* index.html
+* __index.html__
 
-* assets
+* __assets__
   * style.css
   * png + jpg files
 
-  * js
+  * __js__
     * custom.js
     * custom.object.js
     * custom-return.js
 
-**You have the option from select 1 of 3 different JavaScript files for your project. Please make sure you select the file you would like to use in your index.html file. They all produce the same result and are only there as an example to show different ways in which you can structure JavaScript.**\
+**You have the option to select from 1 of 3 different JavaScript files for this project. Please make sure you select the file link that you would like to use in your index.html file in the code editor. They all produce the same result and are only there as an example to show different ways in which you can structure JavaScript.**
 
 
-###### JavaScript :rocket:
+### JavaScript :rocket:
 
-**You decide which file you would like to turn on!**\
+**You decide which file you would like to turn on!**
 
 ```html
 <!-- custom JavaScript file link - using function scope -->
@@ -38,4 +38,4 @@
 <script src="js/custom-return.js"></script>
 ```
 
-Enjoy :+1:
+## Enjoy :+1:
