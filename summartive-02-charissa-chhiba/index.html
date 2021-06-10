@@ -15,96 +15,53 @@
     <!-- fullpage css file -->
   <link rel="stylesheet" href="css/jquery.fullpage.css">
   <!-- do i need this?? css file -->
-  <link rel="stylesheet" href="css/normalize.min.css">
+  <!-- <link rel="stylesheet" href="css/normalize.min.css"> -->
   <!-- animateModal css file -->
   <link rel="stylesheet" href="css/animate.min.css">
+  <!-- custom css file -->
+  <link rel="stylesheet" href="css/custom.css">
 
-  <style>
-    button {
-      /* position: fixed;
-      top: 10px;
-      z-index: 99999 */
-      background-color: blue;
-      font-size: 100px;
-    }
-    #btnOne {
-      right: 150px;
-    }
-    #jump {
-      width: 100px;
-      left: 50%;
-      margin-left: -50px; /* Negative half of width. */
-    }
-    .section {
-      font-size: 120px;
-    }
-
-    .a{
-      background-color: pink;
-    }
-    .b{
-      background-color: powderBlue;
-    }
-    .c {
-      background-color: green;
-    }
-    .d {
-      background-color: purple;
-    }
-
-    #btn-close-modal {
-        width:100%;
-        text-align: center;
-        cursor:pointer;
-        color:#fff;
-    }
-  .modal-content {
-    margin: 10%;
-    background-color: #06315C;
-  }
-
-  .tooltip-inner {
-    background-color: #00cc00;
-}
-
-/* .tooltip.primary.bottom > .tooltip-arrow {
-  border-bottom-color: #00cc00;
-} */
-
-  .tooltip
-  .arrow:before {
-  border-bottom: 5px solid red !important;
-}
-
-  </style>
 </head>
 
 <body>
-
+<!-- full page container  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
   <div id="fullpage">
-    <div class="section a">
+    <!-- section 1   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+    <div class="section section1">
+        <div class="sec1-heading">
+          <h3>this is a tile</h3>
+        </div>
+          <img class="sec1-logo" src="img/ecru-logo.svg" alt="">
+          <img class="sec1-tnz-logo" src="img/tnz-logo.png" alt="">
+          <img class="sec1-box-arrow" src="img/box-arrow.svg" alt="">
+    </div>
+
+    <!-- section 2   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+    <div class="section section2">
+
+
+    </div>
+
+    <!-- section 3   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+    <div class="section section3">
       <button><a id="demo02" href="#modal-02" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">SUBMIT</a></button>
     </div>
-    <div class="section b"></div>
-    <div class="section d"></div>
+
+    <!-- section 4   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+    <div class="section section4"></div>
   </div>
 
-  <!--DEMO02-->
+<!-- Modal Window Section ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
   <div id="modal-02">
     <!--"THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID-->
     <!-- <div  id="btn-close-modal" class="close-modal-02"></div> -->
 
-    <div class="modal-content">
-        <!--Your modal content goes here-->
-        <div class="card" style="width: 18rem;">
-        <img src="demo.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" id="btn-close-modal" class="btn btn-primary close-modal-02 get-sec-d">Go somewhere</a>
-        </div>
+    <!--Your modal content goes here-->
+      <div class="modal-content">
+        <h3>This is a title</h3>
       </div>
-    </div>
+
+
   </div>
 
 
@@ -125,79 +82,11 @@
   <script src="js/custom.js"></script>
   <!-- animatedModal javascript file -->
   <script src="js/animatedModal.js"></script>
-
-
-  <script>
-      $(document).ready(function() {
-        $('#fullpage').fullpage({
-          //Navigation
-          menu: '#menu',
-          lockAnchors: true,
-          anchors:['firstPage', 'secondPage'],
-          navigation: true,
-          navigationPosition: 'right',
-          navigationTooltips: ['firstSlide', 'secondSlide'],
-          showActiveTooltip: true,
-          slidesNavigation: true,
-          slidesNavPosition: 'bottom'
-        });
-
-        // Click Events Fullpage.js provides an API
-        $('#btnOne').click(function (){
-          // To move down one slide...
-          $.fn.fullpage.moveSectionDown();
-        });
-
-        $('#btnTwo').click(function (){
-          // To move up one slide
-          $.fn.fullpage.moveSectionUp();
-        });
-
-        $('#jump').click(function (){
-          // Jump to a particular slide
-          $.fn.fullpage.moveTo(3);
-        });
-        //Which is the same as
-
-
-                          //demo 02
-                          $("#demo02").animatedModal({
-                              animatedIn:'lightSpeedIn',
-                              animatedOut:'bounceOutDown',
-                              color:'#06315C',
-                              // Callbacks
-                              beforeOpen: function() {
-                                  console.log("The animation was called");
-                              },
-                              afterOpen: function() {
-                                  console.log("The animation is completed");
-                              },
-                              beforeClose: function() {
-                                  console.log("The animation was called");
-                              },
-                              afterClose: function() {
-                                  console.log("The animation is completed");
-                                  // after close you got to page 3
-                                  $.fn.fullpage.moveTo(3);
-                              },
-
-
-                          });
-
-                          // Bootsrap tooltips
-
-      $('#demo02').tooltip();
+  <!-- custom javascript file -->
+  <script src="js/custom.js"></script>
 
 
 
-
-      });
-      // document ENDS
-
-
-  // 1) after close. Go to section d
-
-  </script>
 </body>
 
 </html>

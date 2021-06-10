@@ -1,0 +1,106 @@
+/* custom css written here: */
+
+
+/* section1 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; */
+.section1 {
+  background-color: #444444;
+  z-index: 0;
+}
+
+/* .sec1-container {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  z-index: 2;
+  background-color: rgb(101, 173, 102);
+} */
+
+.sec1-heading {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 0;
+  height: 10%;
+  width: 90%;
+  z-index: 2;
+  /* background-color: green; */
+}
+
+.sec1-heading h3 {
+  margin-top: 2rem;
+  color: #EBD6C4;
+  border-top: 0.5px solid #EBD6C4;
+  border-bottom: 0.5px solid #EBD6C4;
+  padding: 0.5rem 0;
+}
+
+.sec1-logo {
+  position: absolute;
+  width: 30%;
+  height: auto;
+  top: 28%;
+  left: 35%;
+  right: 0;
+  z-index: 2;
+}
+
+.sec1-tnz-logo {
+  position: absolute;
+  width: 15%;
+  top: 80%;
+  left: 5%;
+  right: 0;
+}
+
+.sec1-box-arrow {
+  position: absolute;
+  width: 2.5%;
+  top: 85%;
+  left: 93%;
+  right: 0;
+}
+
+/* section2 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; */
+.section2 {
+  background-color: powderBlue;
+}
+
+
+
+
+/* section3 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; */
+.section3 {
+  background-color: green;
+}
+
+
+
+
+/* section4 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; */
+.section4 {
+  background-color: purple;
+}
+
+
+
+#btn-close-modal {
+    width:100%;
+    text-align: center;
+    cursor:pointer;
+    color:#fff;
+}
+
+.modal-content {
+  flex: none;
+  width: 90%;
+  height: 15%;
+  border: none;
+  border-radius: 0;
+  border-bottom: 0.5px solid #EBD6C4;
+  background-color: #444444;
+  left: 5%;
+}
+
+.modal-content h3 {
+  color: #EBD6C4;
+}
