@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Summative-02-cc</title>
+  <!-- favicon error -->
+  <link rel="shortcut icon" href="#" />
+  <!-- font awesome css file -->
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <!-- bootstrap css file -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- custom css file -->
+  <link rel="stylesheet" href="css/custom.css">
+  <!-- fullpage css file -->
+  <link rel="stylesheet" href="css/jquery.fullpage.css">
+  <!-- do i need this?? css file -->
+  <!-- <link rel="stylesheet" href="css/normalize.min.css"> -->
+  <!-- animateModal css file -->
+  <link rel="stylesheet" href="css/animate.min.css">
+  <!-- date picker plugin css file -->
+  <link rel="stylesheet" href="css/datepicker.css">
+  <!-- mapbox plugin css file -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <!-- custom css file -->
+  <link rel="stylesheet" href="css/custom.css">
+
+
+
+</head>
+
+<body>
+  <!-- full page container  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+  <div id="fullpage">
+    <!-- section 1   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+    <div class="section section1">
+      <video autoplay loop id="myVideo" src="img/galexy-vid.mp4" type="video/mp4"></video>
+
+      </video>
+      <div class="sec1-heading">
+        <h3>this is a tile</h3>
+      </div>
+      <img class="sec1-logo" src="img/ecru-logo.svg" alt="">
+      <img class="sec1-tnz-logo" src="img/tnz-logo.png" alt="">
+      <img class="sec1-box-arrow" src="img/box-arrow.svg" alt="">
+    </div>
+
+    <!-- section 2   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+    <div class="section section2">
+      <div class="accordion">
+        <!-- according 1   ;;;;;;;;;;;;;;;;;;;;; -->
+        <section class="accordion-item accordion-sec1">
+          <h3>Select Guests</h3>
+          <div class="accordion-item-content">
+            <div class="row align-items-start">
+              <div class="col guest-sec">
+                <h1>01</h1>
+                <h4>Select the amount of guests</h4>
+                <input class="guest-qty" type="number" name="guests" value="2">
+                <button class="guest-btn">Submit</button>
+                <h3 class="guest-text"></h3>
+              </div>
+              <div class="col planet-sec">
+                <img class="logo" src="img/ecru-logo.svg" alt="">
+                <img class="planet-image" src="img/planet-img.svg" alt="">
+
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- according 2   ;;;;;;;;;;;;;;;;;;;;; -->
+        <section class="accordion-item accordion-item--default accordion-sec2">
+          <h3>Select Dates</h3>
+          <div class="accordion-item-content">
+            <div class="acc-container-2">
+              <h1>02</h1>
+              <img class="logo1" src="img/butter-logo.svg" alt="">
+              <h4>Check In</h4>
+              <h4>Check Out</h4>
+              <input class="date-picker" type="text" name="datefilter" value="" />
+            </div>
+          </div>
+        </section>
+        <!-- according 3   ;;;;;;;;;;;;;;;;;;;;; -->
+        <section class="accordion-item accordion-sec3">
+          <h3>Select a Location</h3>
+          <div class="accordion-item-content">
+            <div class="row align-items-start">
+              <div class="col location-sec">
+                <div class="location-sec-content">
+                  <h1>03</h1>
+                  <h1>Please Select your Star Gazing Location</h1>
+                </div>
+                <div class="location-accomodation1">
+                  <h3>Pure Pod Accomodation</h3>
+                  <img class="pure-img" src="img/purepod-image.jpeg" alt="">
+                  <div class="rating-sec1">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                  </div>
+                  <p>ing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  <button class="light-btn">Select</button>
+                </div>
+              </div>
+              <div class="col map-sec">
+                <div id="map" class="dark"></div>
+                <img class="logo3" src="img/butter-logo.svg" alt="">
+              </div>
+
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- section 3   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+    <div class="section section3">
+      <button><a id="demo02" href="#modal-02" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">SUBMIT</a></button>
+    </div>
+
+    <!-- section 4   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+    <div class="section section4"></div>
+  </div>
+
+  <!-- Modal Window Section ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+  <div id="modal-02">
+    <!--"THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID-->
+    <!-- <div  id="btn-close-modal" class="close-modal-02"></div> -->
+
+    <!--Your modal content goes here-->
+    <div class="modal-content">
+      <div class="modal-top">
+        <h3>This is a title</h3>
+        <h1>01</h1>
+      </div>
+      <div class="row align-items-start">
+        <div class="col red">
+          <h2>Excursion One</h2>
+          <img class="ex1-image" src="img/ex1-img.png" alt="">
+        </div>
+        <div class="col pink">
+
+        </div>
+        <div class="col green">
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+  <!-- jquery javascript file -->
+  <script src="js/jquery.js"></script>
+  <!-- fullpage javascript file -->
+  <script src="js/jquery.fullpage.js"></script>
+  <!-- popper javascript file -->
+  <script src="js/popper.js"></script>
+  <!-- bootstrap javascript file -->
+  <script src="js/bootstrap.js"></script>
+  <!-- custom javascript file -->
+  <script src="js/custom.js"></script>
+  <!-- animatedModal javascript file -->
+  <script src="js/animatedModal.js"></script>
+  <!-- date picker files -->
+  <script src="js/moment.min.js"></script>
+  <script src="js/datepicker.min.js"></script>
+
+  <!-- custom javascript file -->
+  <script src="js/custom.js"></script>
+
+
+
+
+</body>
+
+</html>
