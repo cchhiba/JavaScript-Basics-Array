@@ -1,0 +1,351 @@
+/* custom css written here: */
+/* section1 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; */
+.section1 {
+  background-color: #444444;
+  z-index: 0;
+}
+
+video {
+  width: 100%;
+  height: auto;
+}
+
+/* .sec1-container {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  z-index: 2;
+  background-color: rgb(101, 173, 102);
+} */
+.sec1-heading {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 0;
+  height: 10%;
+  width: 90%;
+  z-index: 2;
+  /* background-color: green; */
+}
+
+.sec1-heading h3 {
+  margin-top: 2rem;
+  color: #EBD6C4;
+  border-top: 0.5px solid #EBD6C4;
+  border-bottom: 0.5px solid #EBD6C4;
+  padding: 0.5rem 0;
+}
+
+.sec1-logo {
+  position: absolute;
+  width: 30%;
+  height: auto;
+  top: 28%;
+  left: 35%;
+  right: 0;
+  z-index: 2;
+}
+
+.sec1-tnz-logo {
+  position: absolute;
+  width: 15%;
+  top: 80%;
+  left: 5%;
+  right: 0;
+}
+
+.sec1-box-arrow {
+  position: absolute;
+  width: 2.5%;
+  top: 85%;
+  left: 93%;
+  right: 0;
+}
+
+/* section2 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; */
+.section2 {
+  background-color: #444444;
+}
+
+/* The Magic */
+.accordion:hover .accordion-item:hover .accordion-item-content,
+.accordion .accordion-item--default .accordion-item-content {
+  height: 33.5em;
+}
+
+.accordion-item-content,
+.accordion:hover .accordion-item-content {
+  height: 0;
+  overflow: hidden;
+  transition: height 1s;
+}
+
+.accordion {
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  font-size: 20px;
+}
+
+.accordion .accordion-item {
+  background-image: linear-gradient(90deg, #eee, #f5f5f5, #eee);
+  padding: 1em;
+  color: #eee;
+}
+
+/* according 1 ;;;;;;;;;;;;;*/
+.accordion .accordion-item:nth-child(1) {
+  background-color: hsl(200, 6% 14%);
+  background-image: linear-gradient(-90deg, hsl(200deg 5% 21%), hsl(200deg 5% 29%) 2em, hsl(200deg 5% 6%));
+}
+
+.accordion-sec1 h3 {
+  margin: 0;
+  color: #E5E2DD;
+  border-bottom: 0.5px solid #E5E2DD;
+  border-top: 0.5px solid #E5E2DD;
+  padding: 5px;
+}
+
+.col {
+  height: 800px;
+  padding: 20px;
+}
+
+.guest-sec {
+  border-right: 1px solid #EBD6C4;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.guest-btn {
+  background-color: #EBD6C4;
+  color: #414042;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  border-color: #EBD6C4;
+  border-style: none;
+  transition: 0.3s;
+}
+
+.guest-btn:hover {
+  background-color: #F06839;
+}
+
+.planet-image {
+  width: 100%;
+  height: auto;
+  margin: 0px;
+}
+
+.logo {
+  width: 50%;
+  height: auto;
+}
+
+/* according 2 ;;;;;;;;;;;;;*/
+
+.accordion .accordion-item:nth-child(2) {
+  background-color: #444444;
+  background-image: url('milkyway-img.jpeg');
+  background-size: cover;
+}
+
+.accordion-sec2 h3 {
+  margin: 0;
+  color: #EBD6C4;
+  border-bottom: 0.5px solid #EBD6C4;
+  border-top: 0.5px solid #EBD6C4;
+  padding: 5px;
+}
+
+.acc-container-2 {
+  /* background-color: hsla(120, 100%, 50%, 0.3); */
+  height: 100%;
+  margin: 0 20%;
+}
+
+.logo1 {
+  width: 30%;
+  height: auto;
+  margin-left: 40%;
+}
+
+.acc-container-2 h4 {
+  background: #444444;
+  text-align: center;
+}
+
+.acc-container-2 h1 {
+  text-align: right;
+}
+
+.date-picker {
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: hsl(15, 86%, 58%);
+  border-color: hsl(15, 86%, 58%, 80%);
+}
+
+.btn-primary:hover {
+  background-color: #444444;
+}
+
+
+.location-accomodation1 {
+  display: none;
+}
+
+.location-accomodation1 h3 {
+  border-top: 0.5px solid #444444;
+  border-bottom: 0.5px solid #444444;
+  color: #444444;
+}
+
+.pure-img {
+  width: 100%;
+  height: auto;
+  padding: 0.5rem 0;
+}
+
+.rating-sec1 {
+  text-align: right;
+  border-top: 0.5px solid #444444;
+  border-bottom: 0.5px solid #444444;
+}
+
+.rating-sec1 p {
+  float: left;
+  overflow: hidden;
+}
+
+.light-btn {
+  float: right;
+  background-color: #414042;
+  color: #EBD6C4;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  border-color: #414042;
+  border-style: none;
+  transition: 0.3s;
+}
+
+.light-btn:hover {
+  background-color: #F06839;
+}
+
+/* according 3 ;;;;;;;;;;;;;*/
+.accordion .accordion-item:nth-child(3) {
+  background-color: hsl(28, 49%, 85%);
+  background-image: linear-gradient(-90deg, hsl(31, 64%, 80%), hsl(31, 66%, 80%) 2em, hsl(31, 70%, 80%));
+}
+
+.accordion-sec3 h3 {
+  margin: 0;
+  color: #444444;
+  border-bottom: 0.5px solid #444444;
+  border-top: 0.5px solid #444444;
+  padding: 5px;
+}
+
+.location-sec {
+  color: #444444;
+  border-right: 1px solid #444444;
+}
+
+.location-sec h1 {
+  text-align: right;
+  padding: 3%;
+}
+
+#map {
+  width: 100%;
+  height: 80%;
+}
+
+.marker {
+  background-image: url('mapbox-icon.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.logo3 {
+  position: absolute;
+  bottom: 25%;
+  right: 6%;
+  width: 20%;
+  height: auto;
+}
+
+/* section3 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; */
+.section3 {
+  background-color: green;
+}
+
+/* section4 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; */
+.section4 {
+  background-color: purple;
+}
+
+#btn-close-modal {
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+}
+
+.modal-content {
+  flex: none;
+  width: 90%;
+  height: 15%;
+  border: none;
+  border-radius: 0;
+  background-color: #444444;
+  left: 5%;
+}
+
+.modal-top h3 {
+  color: #EBD6C4;
+}
+
+.modal-top {
+  height: 20rem;
+  background-color: blue;
+  border-bottom: 0.5px solid #EBD6C4;
+}
+
+.red {
+  background-color: red;
+  padding: 0% 3%;
+}
+
+.red h2 {
+  padding: 2% 0%;
+  margin: 4% 0%;
+  border-top: 0.5px solid #EBD6C4;
+  border-bottom: 0.5px solid #EBD6C4;
+}
+
+.ex1-image {
+  width: 80%;
+  height: auto;
+  margin: 0% 10%;
+}
+
+.pink {
+  background-color: pink;
+  padding: 0% 3%;
+}
+
+.green {
+  background-color: green;
+  padding: 0% 3%;
+}
